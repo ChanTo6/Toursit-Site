@@ -1,0 +1,23 @@
+<ngx-slick-carousel class="carousel" 
+  #slickModal="slick-carousel" 
+  [config]="slideConfig" 
+  (init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)"
+  (afterChange)="afterChange($event)"
+  (beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of slides" class="slide">
+<img src="{{ slide.img }}" alt="" width="100%">
+</div>
+
+</ngx-slick-carousel>
+<div class="text">
+  <h2>Tbilisi Information</h2>
+  <ul>
+    <li *ngFor="let city of Hotel" (mouseover)="onMouseOver(city)">
+      <strong>{{ city.name }}</strong> - RoomNumber: {{ city.RoomNumber }}, Price: {{ city.price }}
+    </li>
+  </ul>
+</div>
+
+
+

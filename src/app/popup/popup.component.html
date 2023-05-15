@@ -1,0 +1,69 @@
+
+<img src='./assets/img/popup.jpg' >
+
+<form [formGroup]="registrationForm"  (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username">
+    <div *ngIf="registrationForm.get('username')?.invalid 
+    && (registrationForm.get('username')?.dirty 
+    || registrationForm.get('username')?.touched)">
+      <div *ngIf="registrationForm.get('username')?.hasError('required')">
+        Username is required.
+      </div>
+      <div *ngIf="registrationForm.get('username')?.hasError('required')">
+        Username must contain only letters and numbers.
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" formControlName="email">
+
+    <div *ngIf="registrationForm.get('email')?.invalid 
+    && (registrationForm.get('email')?.dirty
+     || registrationForm.get('email')?.touched)">
+
+      <div *ngIf="registrationForm.get('email')?.hasError('required')">
+        Email is required.
+      </div>
+      <div *ngIf="registrationForm.get('email')?.hasError('required')">
+        Email must be a valid email address.
+      </div>
+    </div>
+  </div> 
+  
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password">
+    <div *ngIf="registrationForm.get('password')?.invalid 
+    && (registrationForm.get('password')?.dirty 
+    || registrationForm.get('password')?.touched)">
+      <div *ngIf="registrationForm.get('password')?.hasError('required')">
+        Password is required.
+      </div>
+      <div *ngIf="registrationForm.get('password')?.hasError('required')">
+        Password must be at least 6 characters long.
+      </div>
+    </div>
+  </div>
+  <button type="submit" >Register</button>
+
+  <!-- <div id="g_id_onload"
+data-client_id="611626701517-ansjeimq9ragotpnvtabsug3ail8a8vr.apps.googleusercontent.com"
+data-login_uri="http://localhost:4200/main"
+data-auto_prompt="false">
+</div>
+<div class="g_id_signin"
+data-type="standard"
+data-size="large"
+data-theme="outline"
+data-text="sign_in_with"
+data-shape="rectangular"
+data-logo_alignment="left">
+</div> -->
+
+
+

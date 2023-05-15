@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  .admin{
+    position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  .admin:hover {
+    background-color: #555;
+  }
+  button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+  .popup {
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  }
+  
+  .popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #800000;
+    width: 60px;
+  }
+  
+
+.popup input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.popup button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #009688;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #008080;
+}
+  
+
+  header {
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 16px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li button {
+    margin-left: 16px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+  }
+  
+  
+
+ .hero-image {
+  margin-top: 10%;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  
+  .destinations {
+    padding: 64px;
+    background-color: #f8f8f8;
+    margin-top: 10%;
+  }
+  
+  .destinations h2 {
+    margin-bottom: 32px;
+  }
+  
+  .contact {
+    padding: 64px;
+    background-color: #f8f8f8;
+    width: 50%;
+    margin: auto;
+  }
+  
+  .contact h2 {
+    margin-bottom: 32px;
+  }
+  
+  .contact label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .contact input,
+
+  .contact textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  

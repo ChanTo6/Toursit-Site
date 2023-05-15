@@ -1,0 +1,28 @@
+<section id="main-section"></section>
+
+
+<div class="batumi">
+    <app-batumi class="slider" [Hotel]=
+    "Hotel" (citySelected)="onCitySelected($event)">
+
+    </app-batumi>
+      <button *ngIf="isRegister" >book</button>
+ 
+</div>
+
+<div class="tbilisi">
+   
+    <app-tbilisi class="slider" [Hotel]=
+    "Hotel" (citySelected)="onCitySelected($event)">
+      
+    </app-tbilisi>
+    <button *ngIf="isRegister" >book</button>
+</div>
+<div class="telavi">
+  
+    <app-telavi class="slider" [Hotel]=
+    "Hotel" (citySelected)="onCitySelected($event)">
+    
+    </app-telavi>
+      <button *ngIf="isRegister">book</button>
+</div>

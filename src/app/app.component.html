@@ -1,0 +1,104 @@
+<header>
+  <nav>
+    <ul>
+      <li><a routerLink="main" pageScroll href="#main-section">Main</a></li>
+      <li>
+        <a routerLink="destination" pageScroll href="#destination-section"
+          >Destination</a
+        >
+      </li>
+      <li><a routerLink="about" pageScroll href="#about-section">About</a></li>
+      <li>
+        <a routerLink="contact" pageScroll href="#contact-section">Contact</a>
+      </li>
+      <ng-container *ngIf="RegistrationButtom">
+        <button *ngIf="RegistrationButtom" (click)="openRegistrationForm()">
+          Auth
+        </button>
+      </ng-container>
+      <ng-container *ngIf="Logoutform">
+        <button (click)="logout()">logout</button>
+      </ng-container>
+      <li>
+        <button class="admin" (click)="toggleDropdown()" *ngIf="adminToggle">
+          Admin Personal
+        </button>
+        <div class="dropdown" *ngIf="isDropdownOpen">
+          <div class="Authentic">
+            <ng-container *ngIf="isOpen">
+              <app-auth> </app-auth>
+            </ng-container>
+          </div>
+        </div>
+      </li>
+      <ng-container *ngIf="showRegistrationForm">
+        <div class="popup">
+          <app-popup (formSubmitted)="onFormSubmitted($event)"></app-popup>
+          <button class="close" (click)="closeRegistrationForm()">Close</button>
+        </div>
+      </ng-container>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="hero-image">
+    <img src="assets/img/travel.jpg" >
+  </section>
+  <section class="destinations">
+    <app-destination></app-destination>
+    <h2>Popular Destinations</h2>
+    <app-main></app-main>
+  </section>
+  <app-about> </app-about>
+  <app-contact></app-contact>
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form [formGroup]="postForm" (ngSubmit)="onSubmitPost()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" />
+      <div
+        style="color: red"
+        *ngIf="
+          postForm.get('name')?.invalid &&
+          (postForm.get('name')?.dirty || postForm.get('name')?.touched)
+        "
+      >
+        <div
+          style="color: red"
+          *ngIf="postForm.get('name')?.hasError('required')"
+        >
+          Name is required
+        </div>
+      </div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" />
+      <div
+        *ngIf="
+          postForm.get('email')?.invalid &&
+          (postForm.get('email')?.dirty || postForm.get('email')?.touched)
+        "
+      >
+        <div
+          style="color: red"
+          *ngIf="postForm.get('email')?.hasError('required')"
+        >
+          Email is required
+        </div>
+        <div
+          style="color: red"
+          *ngIf="postForm.get('email')?.hasError('required')"
+        >
+          Invalid email format
+        </div>
+      </div>
+      <label for="message">Message:</label>
+      <textarea id="message" formControlName="message"></textarea>
+
+      <button type="submit" [disabled]="postForm.invalid">Submit</button>
+    </form>
+  </section>
+</main>
+
+<router-outlet></router-outlet>
+
+<p>&copy; KR Company</p>
